@@ -1,0 +1,92 @@
+@import url("https://fonts.googleapis.com/css2?family=Nerko+One&display=swap");
+
+// MIXINS
+@mixin customContainer($d, $ai, $jc, $h, $w) {
+	display: flex;
+	flex-direction: $d;
+	align-items: $ai;
+	justify-content: $jc;
+	height: $h;
+	width: $w;
+}
+
+// STYLES
+a {
+	text-decoration: none;
+}
+#root {
+	@include customContainer(row, center, center, 100vh, 100vw);
+	font-family: "Nerko One";
+}
+table {
+	border-collapse: collapse;
+	height: 100vh;
+	width: 75vw;
+}
+th { height: 0; }
+td, th {
+	border: 1px solid #D7D7D7;
+	box-sizing: border-box;
+	padding: 5px;
+	vertical-align: top;
+	width: 100px;
+}
+.arrow, .button {
+	transition: 0.25s;
+	cursor: pointer;
+}
+.arrow:hover {
+	opacity: 0.25;
+}
+.button {
+	border: none;
+	border-radius: 0.5vw;
+	padding: 1vw;
+}
+.button:hover { 
+	opacity: 0.75;
+	transform: scale(1.1);
+}
+.calendarMenu {
+	@include customContainer(column, center, space-evenly, 100%, 25vw);
+}
+.insideCalendarMenu {
+	@include customContainer(column, center, center, 25%, 100%);
+}
+.calendarMonthChange {
+	@include customContainer(row, center, center, auto, 100%);
+	font-size: 2vw;
+}
+.calendarMonthChangeInfo {
+	margin: 1vw;
+	text-align: center;
+	width: 15vw;
+}
+.addSchedule {
+	@include customContainer(column, center, center, auto, 25vw);
+}
+.addScheduleTitle {
+	font-size: 1.5vw;
+	margin-bottom: 2vw;
+}
+.inputDateForm {
+	@include customContainer(row, center, space-between, auto, 100%);
+	margin: 1vw 0;
+}
+.input, .inputDate, .inputMonth, .inputYear {
+	border: 1px solid grey;
+	border-radius: 0.5vw;
+	box-sizing: border-box;
+	padding: 1vw;
+}
+.input { 
+	margin-bottom: 3vw;
+	width: 100%; 
+}
+.inputDate, .inputMonth, .inputYear {
+	width: 30%;
+}
+.scheduleList {
+	@include customContainer(column, center, center, 7vh, 100%);
+	margin: auto;
+}
